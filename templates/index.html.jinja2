@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notes</title>
+	<!-- 引入 Bootstrap 样式文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" integrity="sha384-MXeQqQ2+bsnWtLh2CKXXC6t+5txn/GmyrBpJnbzr+9t+k5f5/Ua0Jt+ZszwHi1h2" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1 class="my-5">Notes</h1>
+		{% if notes %}
+		<ul class="list-group">
+			{% for note in notes %}
+			<li class="list-group-item">{{ note }}</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p class="my-5">No notes yet.</p>
+		{% endif %}
+		<form method="post" class="mt-5">
+			<div class="mb-3">
+				<label for="note" class="form-label">New note:</label>
+				<input type="text" name="note" id="note" class="form-control" placeholder="Enter note...">
+			</div>
+			<button type="submit" class="btn btn-primary">Add note</button>
+		</form>
+	</div>
+	<!-- 引入 Bootstrap JavaScript 文件 -->
+	<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha384-Cz6gu72l6r50w44rW/jMfTnjnAZzWeH3TeyNI8W2JgKXYDyLs6LVe/G/KTEWdLy" crossorigin="anonymous"></script>
+</body>
+</html>
